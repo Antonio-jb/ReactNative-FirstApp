@@ -5,3 +5,10 @@ export const AppColors = {
     secondary: "#E14D24",
     background: "#EEEEEE",
 }
+
+export const AppFonts = {
+    medium: "Poppins-Medium",
+    regular: "Poppins-Regular",
+    bold: "Poppins-Bold",
+    semibold: "Poppins-SemiBold",
+}
