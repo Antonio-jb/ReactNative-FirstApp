@@ -1,12 +1,13 @@
 import {Button, Image, Text, TouchableOpacity, View} from "react-native";
 import ViewModel from "./ViewModel";
 import {PropsStackNavigation} from "../../../interfaces/StackNav";
-import {styles} from "./StyleProfile";
-import {InfoProfileItem} from "./ItemInfo";
+import {styles} from "./StylesProfile";
+import {InfoProfileItem} from "../info/ItemInfo";
 import {RoundedButton} from "../../../components/RoundedButton";
+import {FormInput} from "../../../components/FormInput";
 
 
-export const ProfileInfoScreen = ({navigation, route}: PropsStackNavigation) => {
+export const ProfileUpdateScreen = ({navigation, route}: PropsStackNavigation) => {
 
     const {user, deleteSession} = ViewModel.ProfileViewModel();
 
@@ -15,7 +16,7 @@ export const ProfileInfoScreen = ({navigation, route}: PropsStackNavigation) => 
             <Image
                 style={styles.imageBackground}
                 source={require("../../../../../assets/chef.jpg")}
-                ></Image>
+            ></Image>
             <TouchableOpacity style={styles.logoutContainer}
                               onPress={() => {
                                   deleteSession()
@@ -28,24 +29,24 @@ export const ProfileInfoScreen = ({navigation, route}: PropsStackNavigation) => 
             </View>
 
             <View style={styles.formContainer}>
-                <InfoProfileItem
-                    image={require("../../../../../assets/user.png")}
-                    title={user?.firstName + " " + user?.lastName}
-                    text={'Usuario'}
-                    ></InfoProfileItem>
-                <InfoProfileItem
-                    image={require("../../../../../assets/email.png")}
-                    title={`${user?.email}`}
-                    text={'Correo electronico'}
-                ></InfoProfileItem>
-                <InfoProfileItem
-                    image={require("../../../../../assets/phone.png")}
-                    title={`${user?.phone}`}
-                    text={'Telefono'}
-                ></InfoProfileItem>
+                <FormInput image={require("../../../../../assets/user.png")}
+                           placeholder={"Usuario"}
+                           keyboardType={"default"}
+                           secureTextEntry={false}
+                           onPressFormInterface={() => {}}/>
+                <FormInput image={require("../../../../../assets/email.png")}
+                           placeholder={"Correo electronico"}
+                           keyboardType={"default"}
+                           secureTextEntry={false}
+                           onPressFormInterface={() => {}}/>
+                <FormInput image={require("../../../../../assets/phone.png")}
+                           placeholder={"Telefono"}
+                           keyboardType={"default"}
+                           secureTextEntry={false}
+                           onPressFormInterface={() => {}}/>
 
                 <RoundedButton text={"Actualizar información"}
-                               onPress={() => { navigation.navigate("ProfileUpdateScreen") }}>
+                               onPress={() => { navigation.navigate("ClienteTabNavigator") }}>
                 </RoundedButton>
 
             </View>

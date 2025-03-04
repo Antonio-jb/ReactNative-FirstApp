@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     formContainer: {
         width: "100%",
-        height: "47%",
+        height: "35%",
         backgroundColor: "#FFF",
         position: "absolute",
         bottom: 0,

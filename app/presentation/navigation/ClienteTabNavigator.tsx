@@ -3,6 +3,7 @@ import {ProfileInfoScreen} from "../views/profile/info/ProfileInfo";
 import {Image} from "react-native";
 import ClienteCategoryList from "../views/client/category/list/CategoryList";
 import ClientOrderList from "../views/client/order/list/OrderList";
+import {ProfileUpdateScreen} from "../views/profile/update/ProfileUpdate";
 
 const Tab = createBottomTabNavigator();
 
